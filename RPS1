@@ -1,0 +1,31 @@
+from random import randint
+
+#set list of play options
+myList = ["rock", "paper", "scissors"]
+
+#create loop
+player = False
+while player == False:
+
+    playerChoice = int(input("Enter 0 for Rock, 1 for Paper or 2 for Scissors: ")) # get input from player
+    player = myList[playerChoice] #assign player input to list index
+
+    computerChoice = randint(0, 2) #get input from Computer
+    computer = myList[computerChoice]  #assign computer input to list index
+
+    print("\n")
+    print("Player chose", player, "\n" "vs", "\n" "Computer chose", computer, "\n")
+
+# create game rules and logic. rock beats scissors, scissors cuts paper, paper beats rocks
+    if (playerChoice == 0 and computerChoice == 2) \
+            or ((playerChoice == 1 and computerChoice == 0)) \
+            or ((playerChoice == 2 and computerChoice == 1)):
+        print("PlAYER WINS!", "\n")
+
+    elif playerChoice == computerChoice:
+        print("DRAW!", "\n")
+
+    else:
+        print("COMPUTER WINS!", "\n")
+
+    player = False
